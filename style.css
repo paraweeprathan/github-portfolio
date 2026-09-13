@@ -139,10 +139,11 @@ header {
     background: white;
     padding: 25px;
 .profile-photo {
-    width: 75%;
-    aspect-ratio: 1 / 1;
+    width: 240px;
+    height: 300px;
     object-fit: cover;
     display: block;
+    margin: 0 auto;
 }
     width: 100%;
     aspect-ratio: 1 / 1;
