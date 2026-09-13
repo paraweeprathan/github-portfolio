@@ -139,8 +139,8 @@ header {
     background: white;
     padding: 25px;
 .profile-photo {
-    width: 20%;
-    aspect-ratio: 3 / 4;
+    width: 75%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
 }
