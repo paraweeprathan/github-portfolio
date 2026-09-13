@@ -138,9 +138,12 @@ header {
     border: 1px solid #d8d8d3;
     background: white;
     padding: 25px;
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
 }
-
-.profile-placeholder {
     width: 100%;
     aspect-ratio: 1 / 1;
 
