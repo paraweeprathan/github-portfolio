@@ -140,8 +140,7 @@ header {
     padding: 25px;
 .profile-photo {
     width: 240px;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
