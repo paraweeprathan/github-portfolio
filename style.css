@@ -465,3 +465,213 @@ footer {
         gap: 8px;
     }
 }
+/* ==========================================
+   INTERACTIVE EFFECTS
+   ========================================== */
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Navbar on scroll */
+nav.scrolled {
+    background: rgba(11, 17, 32, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+
+/* Project cards */
+.project-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow:
+        0 15px 45px rgba(56, 189, 248, 0.12);
+}
+
+
+/* Experience cards */
+.experience-item {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateX(6px);
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+
+/* Skill cards */
+.skill-card {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.5);
+}
+
+
+/* Mouse glow */
+.mouse-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+
+    background: rgba(56, 189, 248, 0.055);
+    filter: blur(80px);
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Keep content above glow */
+nav,
+section,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Back to top */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    border-radius: 50%;
+
+    background: rgba(17, 24, 39, 0.9);
+    color: #38bdf8;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #38bdf8;
+    color: #0b1120;
+    transform: translateY(-3px);
+}
+
+
+/* Typing cursor */
+.typing-text::after {
+    content: "|";
+    margin-left: 3px;
+    color: #38bdf8;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/* Hero entrance animation */
+.hero h1 {
+    animation: heroTitle 0.9s ease forwards;
+}
+
+.hero p {
+    animation: heroText 1s ease 0.15s forwards;
+    opacity: 0;
+}
+
+@keyframes heroTitle {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .mouse-glow {
+        display: none;
+    }
+
+    .back-to-top {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .project-card:hover,
+    .experience-item:hover,
+    .skill-card:hover {
+        transform: none;
+    }
+}
