@@ -866,3 +866,147 @@ footer {
     }
 
 }
+/* =========================
+   ABOUT INTERACTIVE CARDS
+========================= */
+
+.about-details {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-card {
+    border: 1px solid #263449;
+    background: #111827;
+    transition: 0.3s ease;
+}
+
+.about-card:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+
+/* Header */
+
+.about-card summary {
+    list-style: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 28px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.about-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.about-card-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.about-card-number {
+    font-size: 10px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 1px;
+}
+
+.about-card-arrow {
+    font-size: 24px;
+    font-weight: 400;
+    color: #38bdf8;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Open state */
+
+.about-card[open] {
+    border-color: rgba(56, 189, 248, 0.5);
+}
+
+.about-card[open] .about-card-arrow {
+    transform: rotate(45deg);
+}
+
+
+/* Content */
+
+.about-card-content {
+    padding: 0 28px 30px 65px;
+    max-width: 850px;
+
+    animation: aboutReveal 0.35s ease;
+}
+
+.about-card-content h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.about-card-subtitle {
+    color: #38bdf8 !important;
+    font-size: 14px !important;
+    margin-bottom: 18px !important;
+}
+
+.about-card-content p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.about-card-content ul {
+    padding-left: 18px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.about-card-content li {
+    margin-bottom: 8px;
+}
+
+
+/* Opening animation */
+
+@keyframes aboutReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .about-card summary {
+        padding: 20px;
+    }
+
+    .about-card-title {
+        gap: 12px;
+    }
+
+    .about-card-content {
+        padding: 0 20px 25px 20px;
+    }
+
+}
