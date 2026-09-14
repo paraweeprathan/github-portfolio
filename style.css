@@ -1010,3 +1010,253 @@ footer {
     }
 
 }
+/* =========================
+   ABOUT INTERACTIVE CARDS
+========================= */
+
+.about-details {
+    margin-top: 55px;
+    display: grid;
+    gap: 16px;
+    max-width: 850px;
+}
+
+
+/* CARD */
+
+.about-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #0f172a
+    );
+
+    border: 1px solid #263449;
+    border-radius: 16px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Blue glow line */
+
+.about-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #38bdf8;
+
+    transition: width 0.45s ease;
+}
+
+
+/* Hover */
+
+.about-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(56, 189, 248, 0.5);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(56, 189, 248, 0.06);
+}
+
+.about-card:hover::before {
+    width: 100%;
+}
+
+
+/* SUMMARY */
+
+.about-card summary {
+    list-style: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 26px 30px;
+}
+
+.about-card summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* LEFT SIDE */
+
+.about-card summary > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-card-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #38bdf8;
+}
+
+.about-card summary h3 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #f1f5f9;
+
+    transition: color 0.25s ease;
+}
+
+.about-card:hover summary h3 {
+    color: #38bdf8;
+}
+
+
+/* PLUS ICON */
+
+.about-card-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #334155;
+    border-radius: 50%;
+
+    color: #38bdf8;
+    font-size: 20px;
+    font-weight: 300;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.about-card[open] .about-card-icon {
+    transform: rotate(45deg);
+
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+}
+
+
+/* CONTENT */
+
+.about-card-content {
+    max-width: 720px;
+
+    padding:
+        0 30px 32px 61px;
+
+    animation: aboutCardOpen 0.4s ease;
+}
+
+.detail-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: #38bdf8;
+}
+
+.about-card-content h4 {
+    margin-bottom: 5px;
+
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.detail-degree {
+    color: #38bdf8 !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    margin-bottom: 20px !important;
+}
+
+.about-card-content p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 14px;
+}
+
+.about-card-content ul {
+    margin-top: 15px;
+    padding-left: 18px;
+
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.about-card-content li {
+    margin-bottom: 8px;
+}
+
+
+/* OPEN ANIMATION */
+
+@keyframes aboutCardOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .about-details {
+        margin-top: 40px;
+    }
+
+    .about-card summary {
+        padding: 22px 20px;
+    }
+
+    .about-card summary > div {
+        gap: 12px;
+    }
+
+    .about-card summary h3 {
+        font-size: 15px;
+    }
+
+    .about-card-content {
+        padding:
+            0 20px 28px 20px;
+    }
+
+}
