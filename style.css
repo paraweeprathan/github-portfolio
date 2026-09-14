@@ -96,11 +96,7 @@ header {
     margin-bottom: 30px;
 }
 
-.hero-description {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+.hero-description { max-width: 620px; font-size: 17px; color: #94a3b8; margin-bottom: 35px; }
 
 .hero-buttons {
     display: flex;
